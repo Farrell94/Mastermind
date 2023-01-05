@@ -26,12 +26,11 @@ body,
 .grid-pions{
 	grid-row: 1 / span 3;
 	background-color: #DDB6A0 ;
-	display: grid;
+	display: flex;
 	padding:60px 20px;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(10, 45px);
+	flex-direction: column;
 	align-items: center;
-	justify-items: center;
+	justify-content: flex-start;
 	gap: 10px;
 	border-right: 2px solid rgba(173, 143, 126);
 	border-radius: 10px 0 0 10px;
@@ -39,6 +38,15 @@ body,
 
 .grid-pions.decodeur{
 	border-radius: 0px 10px 10px 0;
+}
+
+.rang{
+	width: 100%;
+	height: 45px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 /*---- Choix Pions -----*/
