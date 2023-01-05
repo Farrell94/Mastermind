@@ -72,7 +72,7 @@ button:hover{
 
 .choice-container{
 	box-shadow: inset -5px 0px 15px rgba(0,0,0,1);
-	background-color: #DDB6A0 ;
+	background-color: #291D16 ;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr);
