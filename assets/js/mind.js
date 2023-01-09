@@ -1,22 +1,10 @@
 console.log('✨')
 
-// Créer variables pour chaque couleur de pions
+// Selecteurs de slots
 
 let emptyPionGame = document.querySelectorAll('.game')
 let emptyPionDecodeur = document.querySelectorAll('.decodeur')
-
-
-
-
-let bleu = document.querySelectorAll('.bleu')
-let rouge = document.querySelectorAll('.rouge')
-let vert = document.querySelectorAll('.vert')
-let violet = document.querySelectorAll('.violet')
-let jaune = document.querySelectorAll('.jaune')
-let rose = document.querySelectorAll('.rose')
-
-let trouve = document.querySelectorAll('.trouve')
-let almost = document.querySelectorAll('.almost')
+let selectRang = document.querySelectorAll('.rang')
 
 
 // Transformer Nodelist en tableau
@@ -84,6 +72,7 @@ function addColorArray(){
 
 	checkColor()
 }
+console.log(rowG)
 
 
 // Vérifier les couleurs
@@ -98,6 +87,7 @@ function checkColor(){
 
 		if(!couleurIA.includes(colorTested)){
 
+			rowD
 			console.log(colorTested,' : Pas trouvé')
 
 		} else {
@@ -114,26 +104,29 @@ function checkColor(){
 }
 
 //Créer pions décodeur
-let createPion = document.createElement('pion')
 
-function addCouleurOk(){
+// let createPion = document.createElement('pion')
+
+// function addCouleurOk(){
 	
-	rowD[count].forEach(item => {
-		createPion.appendChild(rowD)
-		console.log(rowD)
-		// createPion.setAttribute('data-value', 'almost')
-		// createPion.classList.add('almost')
-	}
-
-}
-
-addCouleurOk()
+// 	createPion.classList.add('almost')
+// 	createPion.setAttribute('data-value', 'almost')
+	
+// 	for(let i=0;i<4;i++){
+// 		document.querySelector('.decodeur').appendChild(createPion)
+// 	}
+	
+// }
 
 // function addTotalOk(){
 	
 // 	createPion.classList.add('trouve')
-
-// 	createPion.appendChild(emptyPionDecodeur)
+// 	createPion.setAttribute('data-value', 'trouve')
+	
+// 	for(let i=0;i<4;i++){
+// 		document.querySelector('.decodeur').appendChild(createPion)
+// 	}
+	
 // }
 
-// console.log(addTotalOk())
+// validationBtn.addEventListener('click',addTotalOk())
