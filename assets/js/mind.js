@@ -72,8 +72,6 @@ function addColorArray(){
 
 	checkColor()
 }
-console.log(rowG)
-
 
 // Vérifier les couleurs
 
@@ -86,8 +84,6 @@ function checkColor(){
 		const colorTested = colorDataValues[i]
 
 		if(!couleurIA.includes(colorTested)){
-
-			rowD
 			console.log(colorTested,' : Pas trouvé')
 
 		} else {
@@ -95,6 +91,10 @@ function checkColor(){
 
 			let positionIA = couleurIA.indexOf(colorTested)
 			let positionUser = colorDataValues.indexOf(colorTested)
+
+			if (positionIA == positionUser){
+				addTotalOk()
+			}
 
 			console.log('IA couleur :', positionIA,'IA User :',positionUser)
 		}
@@ -105,28 +105,26 @@ function checkColor(){
 
 //Créer pions décodeur
 
-// let createPion = document.createElement('pion')
 
-// function addCouleurOk(){
-	
-// 	createPion.classList.add('almost')
-// 	createPion.setAttribute('data-value', 'almost')
-	
-// 	for(let i=0;i<4;i++){
-// 		document.querySelector('.decodeur').appendChild(createPion)
-// 	}
-	
-// }
 
-// function addTotalOk(){
+function addCouleurOk(){
 	
-// 	createPion.classList.add('trouve')
-// 	createPion.setAttribute('data-value', 'trouve')
+	createPion.classList.add('almost')
+	createPion.setAttribute('data-value', 'almost')
 	
-// 	for(let i=0;i<4;i++){
-// 		document.querySelector('.decodeur').appendChild(createPion)
-// 	}
+	for(let i=0;i<4;i++){
+		document.querySelector('.decodeur').appendChild(createPion)
+	}
 	
-// }
+}
 
-// validationBtn.addEventListener('click',addTotalOk())
+function addTotalOk(){
+
+	let createPion = document.createElement('pion')	
+	
+	createPion.classList.add('trouve')
+	createPion.setAttribute('data-value', 'trouve')
+
+	document.querySelector('.decodeur').appendChild(createPion)
+	
+}
