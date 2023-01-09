@@ -4,7 +4,7 @@ console.log('✨')
 
 let emptyPionGame = document.querySelectorAll('.game')
 let emptyPionDecodeur = document.querySelectorAll('.decodeur')
-let pion = document.querySelectorAll('pion')
+
 
 
 
@@ -61,29 +61,79 @@ function randomColor(){
 
 randomColor();
 
+// Bouton validation des couleurs pour créer le tableau
+
+let validationBtn = document.querySelector('.validation')
+
+validationBtn.addEventListener('click', addColorArray)
+
 // Ajouter les couleurs de value dans un tableau avec .push => permettra de récupérer la valeur [i] à comparer
 
+let pion = document.querySelectorAll('pion')
+let colorDataValues = []
+
+let count = 0
+
+function addColorArray(){
+
+	rowG[count].forEach(item => {
+
+		const dataValue = item.children[0].getAttribute('data-value')
+		colorDataValues.push(dataValue)
+	})
+
+	checkColor()
+}
 
 
 // Vérifier les couleurs
-
-let fakeGame = ['can','bleu','violet','rose']
 
 function checkColor(){
 
 	let verifLigne = rowG
 
-	console.log(rowG)
+	//Boucle pour tester CHAQUE pion
 	for(let i=0;i<4;i++){
-		const colorTested = fakeGame[i]
+		const colorTested = colorDataValues[i]
+
 		if(!couleurIA.includes(colorTested)){
-			console.log(colorTested,'Pas trouvé')
+
+			console.log(colorTested,' : Pas trouvé')
+
 		} else {
-			console.log(colorTested,'Oui')
+			//Verifier si couleur est OK dans le tableau
+
+			let positionIA = couleurIA.indexOf(colorTested)
+			let positionUser = colorDataValues.indexOf(colorTested)
+
+			console.log('IA couleur :', positionIA,'IA User :',positionUser)
 		}
+
 	}
 	
+}
+
+//Créer pions décodeur
+let createPion = document.createElement('pion')
+
+function addCouleurOk(){
+	
+	rowD[count].forEach(item => {
+		createPion.appendChild(rowD)
+		console.log(rowD)
+		// createPion.setAttribute('data-value', 'almost')
+		// createPion.classList.add('almost')
+	}
 
 }
 
-checkColor()
+addCouleurOk()
+
+// function addTotalOk(){
+	
+// 	createPion.classList.add('trouve')
+
+// 	createPion.appendChild(emptyPionDecodeur)
+// }
+
+// console.log(addTotalOk())
