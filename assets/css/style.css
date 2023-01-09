@@ -25,7 +25,7 @@ body,
 
 .grid-pions{
 	grid-row: 1 / span 3;
-	background-color: #DDB6A0 ;
+	background-color: #D2B398 ;
 	display: flex;
 	padding:60px 20px;
 	flex-direction: column;
@@ -103,6 +103,10 @@ button:hover{
 	position: relative;
 }
 
+.choice{
+	border: 2px solid #A6785D9C;
+}
+
 pion{
 	display: block;
 	position: relative;
@@ -150,9 +154,9 @@ pion{
 	display: block;
 	position: relative;
 	box-shadow: 0px 3px 3px rgba(0,0,0,1);
-	bottom: 1px;
-	left: 1px;
-	width: 22px;
+	bottom: 2px;
+	left: 0px;
+	width: 24px;
 	height: 24px;
 	border-radius: 100%;
 }
