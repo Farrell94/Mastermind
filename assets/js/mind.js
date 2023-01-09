@@ -25,33 +25,23 @@ let allPionsGameArray = [...emptyPionGame]
 let allPionsDecodeurArray = [...emptyPionDecodeur]
 // Divise les pions par rangées
 
+let rowG =[]
+let rowD = []
+
 function splitRangeGame(){
 
 	for (let i = 0; i < 10; i++) {
 	  	let startRang = i*4
 	  	let endRange = (i+1)*4
-	  	let rowG = allPionsGameArray.slice(startRang,endRange)
-	  	let rowD = allPionsDecodeurArray.slice(startRang,endRange)
-
-			console.log(rowG,rowD)
-		}
+	  	rowG.push(allPionsGameArray.slice(startRang,endRange))
+	  	rowD.push(allPionsDecodeurArray.slice(startRang,endRange))
+	}
 }
+
 
 splitRangeGame();
 
 // Créer fonctions pour placer les pions aux emplacements en drag and drop
-
-
-  // function dragstart_handler(ev) {
-  //   // Add the target element's id to the data transfer object
-  //   ev.dataTransfer.setData("text/plain", ev.target.id);
-  // }
-
-  // window.addEventListener("DOMContentLoaded", () => {
-  //   // Get the element by id
-  //   // Add the ondragstart event listener
-  //   pion.addEventListener("dragstart", dragstart_handler);
-  // });
 
 
 // Créer un random pour le choix des couleurs de l'IA
@@ -59,21 +49,41 @@ splitRangeGame();
 let couleurDispo = ['rouge','vert','bleu','jaune','violet','rose']
 let couleurIA = []
 
+
 function randomColor(){
 	for(let i=0;i<4;i++){
 		let randomCol = couleurDispo[Math.floor(Math.random()* 6)]
 		couleurIA.push(randomCol)
 	}
-	console.log(couleurIA)
+	document.querySelector('.randomcolor').textContent = couleurIA.join(" ")
+
 }
+
 randomColor();
 
-document.querySelector('.randomcolor').textContent = couleurIA
+// Ajouter les couleurs de value dans un tableau avec .push => permettra de récupérer la valeur [i] à comparer
 
-// Créer fonction vérif des couleurs
+
+
+// Vérifier les couleurs
+
+let fakeGame = ['can','bleu','violet','rose']
 
 function checkColor(){
-	let colorIA = []
+
+	let verifLigne = rowG
+
+	console.log(rowG)
+	for(let i=0;i<4;i++){
+		const colorTested = fakeGame[i]
+		if(!couleurIA.includes(colorTested)){
+			console.log(colorTested,'Pas trouvé')
+		} else {
+			console.log(colorTested,'Oui')
+		}
+	}
 	
+
 }
 
+checkColor()
